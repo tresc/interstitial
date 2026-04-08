@@ -124,12 +124,15 @@
     },
   ];
 
-  const current = window.location.pathname.split('/').pop() || 'index.html';
   const currentFull = window.location.pathname;
+  const currentFile = currentFull.split('/').pop() || 'index.html';
 
   function isActive(href) {
-    const page = href.split('/').pop().split('#')[0];
-    return page === current || currentFull.endsWith(href.replace(/^\.\.\//, '/'));
+    const hrefFile = href.split('/').pop().split('#')[0];
+    if (!hrefFile) return false;
+    if (hrefFile === currentFile) return true;
+    const normalised = href.replace(/^\.\.\//, '/').replace(/^(?!\/)/, '/');
+    return currentFull.endsWith(normalised.split('#')[0]);
   }
 
   const html = sections.map(s => {
@@ -151,4 +154,32 @@
   if (target) {
     target.innerHTML = `<div class="sidebar-inner">${html}</div>`;
   }
+
+  // Theme toggle
+  const saved = localStorage.getItem('isa-theme');
+  if (saved === 'light') document.body.classList.add('light-mode');
+
+  const btn = document.createElement('button');
+  btn.id = 'theme-toggle';
+  btn.title = 'Toggle light / dark mode';
+  btn.style.cssText = [
+    'position:fixed','bottom:20px','right:20px','z-index:200',
+    'background:var(--bg-3)','border:1px solid var(--rule-2)',
+    'color:var(--text-2)','font-family:var(--mono)','font-size:10px',
+    'letter-spacing:0.12em','text-transform:uppercase',
+    'padding:7px 12px','cursor:pointer','transition:all 0.15s'
+  ].join(';');
+
+  function updateBtn() {
+    btn.textContent = document.body.classList.contains('light-mode') ? 'Dark mode' : 'Light mode';
+  }
+  updateBtn();
+
+  btn.addEventListener('click', () => {
+    document.body.classList.toggle('light-mode');
+    localStorage.setItem('isa-theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
+    updateBtn();
+  });
+
+  document.body.appendChild(btn);
 })();
