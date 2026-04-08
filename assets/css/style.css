@@ -2,24 +2,25 @@
 @import url('https://cdn.jsdelivr.net/npm/@fontsource/share-tech-mono@4.5.0/index.css');
 
 /* ─────────────────────────────────────────
-   TOKENS — DARK MODE (default)
+   TOKENS — BELAFONTE NIGHT (dark, default)
 ───────────────────────────────────────── */
 :root {
-  --bg:         #0b0b09;
-  --bg-2:       #111110;
-  --bg-3:       #181816;
-  --bg-4:       #1e1e1b;
-  --rule:       #2a2a27;
-  --rule-2:     #363632;
-  --text:       #d4d0c4;
-  --text-2:     #aaa69c;
-  --text-3:     #7c7970;
-  --accent:     #a8bab0;
-  --accent-2:   #7a9088;
-  --warn:       #baa882;
-  --warn-2:     #7a6d52;
-  --danger:     #a07070;
-  --green:      #8a9a7a;
+  /* Belafonte Night: bg=#20111b fg=#968c83 brightWhite=#d5ccba */
+  --bg:         #20111b;
+  --bg-2:       #2a1a24;
+  --bg-3:       #33202c;
+  --bg-4:       #3c2835;
+  --rule:       #45373c;
+  --rule-2:     #5e5252;
+  --text:       #d5ccba;
+  --text-2:     #b0a898;
+  --text-3:     #968c83;
+  --accent:     #7a9aaa;
+  --accent-2:   #426a79;
+  --warn:       #eaa549;
+  --warn-2:     #97522c;
+  --danger:     #be100e;
+  --green:      #858162;
   --serif:      'EB Garamond', Georgia, serif;
   --mono:       'Share Tech Mono', 'Courier New', monospace;
   --topbar-h:   44px;
@@ -27,24 +28,25 @@
 }
 
 /* ─────────────────────────────────────────
-   TOKENS — LIGHT MODE
+   TOKENS — BELAFONTE DAY (light mode)
 ───────────────────────────────────────── */
 body.light-mode {
-  --bg:         #f5f3ed;
-  --bg-2:       #edebe4;
-  --bg-3:       #e5e3db;
-  --bg-4:       #dddbd2;
-  --rule:       #cbc9c0;
-  --rule-2:     #b5b3aa;
-  --text:       #1a1a17;
-  --text-2:     #3c3a36;
-  --text-3:     #686660;
-  --accent:     #2e5248;
-  --accent-2:   #3d6860;
-  --warn:       #5a4820;
-  --warn-2:     #7a6238;
-  --danger:     #6a2828;
-  --green:      #2e4e20;
+  /* Belafonte Day: bg=#d5ccba fg=#45373c */
+  --bg:         #d5ccba;
+  --bg-2:       #ccc3b0;
+  --bg-3:       #c4baa8;
+  --bg-4:       #bcb2a0;
+  --rule:       #b0a898;
+  --rule-2:     #968c83;
+  --text:       #20111b;
+  --text-2:     #45373c;
+  --text-3:     #5e5252;
+  --accent:     #426a79;
+  --accent-2:   #2a5060;
+  --warn:       #97522c;
+  --warn-2:     #7a3c1a;
+  --danger:     #be100e;
+  --green:      #858162;
 }
 
 /* ─────────────────────────────────────────
